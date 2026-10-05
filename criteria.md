@@ -25,7 +25,9 @@ contains the answer.
 **Why this target:**
 <!-- e.g. "One of my questions is about a topic only two documents mention, so
      I expect that one to be hard." -->
+A 4-out-of-5 target allows for one difficult question while still requiring the system to retrieve useful information for most questions in my corpus.
 
+---
 ---
 
 ## 2. Every answer names a source
@@ -35,6 +37,7 @@ Every answer the system produces names at least one source document.
 **Why this target:**
 <!-- Why all five and not four? What about your setup makes that achievable —
      or what would have to go wrong for it not to be? -->
+Every answer should be verifiable. Since the pipeline already tracks source filenames, naming a source should be achievable for all five answers.
 
 ---
 
@@ -52,11 +55,13 @@ in at least 4 of 5 tries.
 **Why this target:**
 <!-- What did your distances look like when you set the cutoff in Milestone 4?
      Was there a clean gap, or did the two groups overlap? -->
+Some unrelated questions may retrieve text that looks slightly relevant, so allowing one imperfect result makes the target challenging but realistic.
+
 
 ---
 
 ## 4. Something about your chunks
-
+At least 4 of 5 sampled chunks read as complete thoughts without an abruptly cut-off sentence.
 <!-- YOU WRITE THIS ONE.
 
      How would you know if your chunks were the right size? Name something
@@ -73,12 +78,13 @@ in at least 4 of 5 tries.
 
 **Why this target:**
 
+A chunk should contain enough context to support an answer by itself. Complete thoughts should make the retrieved information easier for the system to use.
 
 
 ---
 
 ## 5. Your choice
-
+For at least 4 of 5 test questions, the cited source document should be the document that actually contains the information used in the answer.
 <!-- YOU WRITE THIS ONE TOO.
 
      Pick something you actually care about getting right. It could be about
@@ -90,7 +96,7 @@ in at least 4 of 5 tries.
 
 
 **Why this target:**
-
+Naming any source is not enough if that source does not support the answer. Correct source attribution makes the system’s responses easier to verify.
 
 
 ---
