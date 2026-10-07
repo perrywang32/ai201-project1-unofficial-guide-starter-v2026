@@ -390,11 +390,11 @@ Sources:
 
 | # | Criterion | Verdict | How I decided |
 |---|---|---|---|
-| 1 |  |  |  |
-| 2 |  |  |  |
-| 3 |  |  |  |
-| 4 |  |  |  |
-| 5 |  |  |  |
+| 1 | Retrieved chunk contains the answer | MET | All three runs retrieved the answer for 4 of 5 questions, meeting the 4-of-5 target. |
+| 2 | Every answer names a source | MISSED | Four answers named supporting source documents, but the registration question was refused without a source line, so this was 4 of 5 rather than 5 of 5. |
+| 3 | Gate stops out-of-corpus questions | MET | The relevance gate refused all 5 out-of-corpus questions in every run, exceeding the 4-of-5 target. |
+| 4 | Chunks read as complete thoughts | MET | All five sampled chunks were readable and contained complete thoughts without abrupt sentence cutoffs. |
+| 5 | Cited source is correct | MET | Four answered in-scope questions cited documents that supported the answers, meeting the 4-of-5 target. |
 
 ## Diagnoses
 
