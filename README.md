@@ -1,6 +1,6 @@
 # The Unofficial Guide
 
-<!-- Replace this line with your name and which corpus you picked. -->
+> Perry Wang — campus_life corpus
 
 > **This file is your submission.** Fill it in as you go — most sections get
 > written during the milestone that produces them, not at the end.
@@ -26,6 +26,12 @@
      this repo.
 
      Milestone 5. -->
+This project answers questions about the campus-life corpus using document
+retrieval and a language model. It loads the campus documents, splits them into
+paragraph-aware chunks, retrieves the chunks most related to a question, and
+generates an answer using only those retrieved documents. It also names its
+sources and refuses questions when the documents do not contain enough
+information.
 
 ## Chunking Strategy
 
@@ -163,10 +169,16 @@ cutoff cleanly separated the two groups for this test.
      "I used AI to help me code" is not.
 
      Milestone 5. -->
+**1.** I asked AI for help replacing the starter fixed-size chunker. It suggested
+a paragraph-aware strategy with a maximum chunk size of about 600 characters.
+I kept the existing `Chunk` structure and changed the implementation so
+paragraphs stayed together and the function reported
+`chunker.py::split_documents`.
 
-**1.**
-
-**2.**
+**2.** I asked AI to help interpret the retrieval results and choose a relevance
+cutoff. It helped me compare the in-corpus and out-of-corpus distances. I kept
+the cutoff at `0.6` because all five out-of-corpus questions were refused while
+four of five in-corpus questions were answered.
 
 <!-- ── Stretch features ─────────────────────────────────────────────────────
      Doing one? Say so here BEFORE you start. A feature this README never
