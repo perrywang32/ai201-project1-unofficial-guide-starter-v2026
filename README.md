@@ -204,18 +204,178 @@ four of five in-corpus questions were answered.
      the same number goes in all three run columns. That's correct, not lazy.
 
      Milestone 1. -->
-
 | Criterion | Target | Run 1 | Run 2 | Run 3 | Verdict |
 |---|---|---|---|---|---|
-| 1. Retrieved chunk contains the answer | 4 of 5 |  |  |  |  |
-| 2. Every answer names a source | 5 of 5 |  |  |  |  |
-| 3. Gate stops out-of-corpus questions | 4 of 5 |  |  |  |  |
-| 4. | | | | | |
-| 5. | | | | | |
-
+| 1. Retrieved chunk contains the answer | 4 of 5 | 4/5 | 4/5 | 4/5 | MET |
+| 2. Every answer names a source | 5 of 5 | check results | check results | check results | decide |
+| 3. Gate stops out-of-corpus questions | 4 of 5 | 5/5 | 5/5 | 5/5 | MET |
+| 4. Your chunk criterion | your target | decide | decide | decide | decide |
+| 5. Your choice | your target | decide | decide | decide | decide |
 <!-- Underneath, paste the REAL output for each criterion from one of your
      runs — the actual text your system produced, not a description of it.
      Name the file and function that produced it. -->
+## Relevance gate output
+
+| Out-of-scope question | Best distance | Gate |
+|---|---:|---|
+| What is the capital of Mongolia? | 0.825 | refused |
+| How do I change the oil in a diesel engine? | 0.934 | refused |
+| Who won the 1994 World Cup? | 0.886 | refused |
+| What is the recommended dosage of ibuprofen for a headache? | 0.844 | refused |
+| How do I write a for loop in Rust? | 0.896 | refused |
+
+### Is the housing lottery completely random? — run 1
+
+- Best distance: 0.2514 (passed the gate)
+- Sources retrieved: admin_housing_lottery.txt, admin_parking_permits.txt, advising_registration.txt, housing_morrow_house.txt, housing_tamsin_court.txt
+
+```
+No, the housing lottery is not completely random. Rising sophomores get a number drawn at random, but juniors and seniors are ordered by accumulated credit hours first, and only tie-break randomly (*admin_housing_lottery.txt*).
+```
+
+### Is the housing lottery completely random? — run 2
+
+- Best distance: 0.2514 (passed the gate)
+- Sources retrieved: admin_housing_lottery.txt, admin_parking_permits.txt, advising_registration.txt, housing_morrow_house.txt, housing_tamsin_court.txt
+
+```
+No, the housing lottery is not completely random. Rising sophomores get a random number drawn, but juniors and seniors are ordered by accumulated credit hours first, with random selection used only as a tie-breaker (*admin_housing_lottery.txt*).
+```
+
+### Is the housing lottery completely random? — run 3
+
+- Best distance: 0.2514 (passed the gate)
+- Sources retrieved: admin_housing_lottery.txt, admin_parking_permits.txt, advising_registration.txt, housing_morrow_house.txt, housing_tamsin_court.txt
+
+```
+No, the housing lottery is not completely random. Rising sophomores have a number drawn at random, but juniors and seniors are ordered by accumulated credit hours first, with random tie-breaking used only as a tie-breaker (*admin_housing_lottery.txt*).
+```
+
+### What determines priority in the housing lottery? — run 1
+
+- Best distance: 0.3615 (passed the gate)
+- Sources retrieved: admin_housing_lottery.txt, advising_registration.txt, course_stat_150_exams.txt, dining_the_atrium_followup.txt, housing_tamsin_court.txt
+
+```
+Based on the provided documents, rising sophomores get a number drawn at random, while juniors and seniors are ordered by accumulated credit hours first, with a random tie-break used if needed. (Source: admin_housing_lottery.txt)
+```
+
+### What determines priority in the housing lottery? — run 2
+
+- Best distance: 0.3615 (passed the gate)
+- Sources retrieved: admin_housing_lottery.txt, advising_registration.txt, course_stat_150_exams.txt, dining_the_atrium_followup.txt, housing_tamsin_court.txt
+
+```
+For the housing lottery, rising sophomores get a number drawn at random, while juniors and seniors are ordered first by accumulated credit hours, with tie-breaks handled randomly (*admin_housing_lottery.txt*).
+```
+
+### What determines priority in the housing lottery? — run 3
+
+- Best distance: 0.3615 (passed the gate)
+- Sources retrieved: admin_housing_lottery.txt, advising_registration.txt, course_stat_150_exams.txt, dining_the_atrium_followup.txt, housing_tamsin_court.txt
+
+```
+In the housing lottery, rising sophomores get a number drawn at random, while juniors and seniors are ordered first by accumulated credit hours, with random tie-breaks used only when necessary. 
+
+Source: `admin_housing_lottery.txt`
+```
+
+### What is the deadline or rule for obtaining a campus parking permit? — run 1
+
+- Best distance: 0.5208 (passed the gate)
+- Sources retrieved: admin_add_drop_deadline.txt, admin_parking_permits.txt, advising_registration.txt, transit_shuttle.txt, transit_walking.txt
+
+```
+Student permits for the west lots go on sale in August and typically sell out in about three days, while the east lot never sells out. There is no waitlist for permits. 
+
+Source: `admin_parking_permits.txt`
+```
+
+### What is the deadline or rule for obtaining a campus parking permit? — run 2
+
+- Best distance: 0.5208 (passed the gate)
+- Sources retrieved: admin_add_drop_deadline.txt, admin_parking_permits.txt, advising_registration.txt, transit_shuttle.txt, transit_walking.txt
+
+```
+Student permits for the west lots go on sale in August and sell out in about three days, while the east lot never sells out because it is a 12-minute walk. There is no waitlist for permits. 
+
+Source: admin_parking_permits.txt
+```
+
+### What is the deadline or rule for obtaining a campus parking permit? — run 3
+
+- Best distance: 0.5208 (passed the gate)
+- Sources retrieved: admin_add_drop_deadline.txt, admin_parking_permits.txt, advising_registration.txt, transit_shuttle.txt, transit_walking.txt
+
+```
+Student permits for the west lots go on sale in August and sell out in about three days, while the east lot never sells out. There is no waitlist available for permits. 
+
+Source: `admin_parking_permits.txt`
+```
+
+### What specific requirement does the advising registration guide give students? — run 1
+
+- Best distance: 0.6177 (refused by the gate)
+- Sources retrieved: admin_add_drop_deadline.txt, admin_graduation_requirements.txt, admin_pass_fail_option.txt, advising_registration.txt, course_engl_205_exams.txt
+
+```
+I don't have enough information about that.
+```
+
+### What specific requirement does the advising registration guide give students? — run 2
+
+- Best distance: 0.6177 (refused by the gate)
+- Sources retrieved: admin_add_drop_deadline.txt, admin_graduation_requirements.txt, admin_pass_fail_option.txt, advising_registration.txt, course_engl_205_exams.txt
+
+```
+I don't have enough information about that.
+```
+
+### What specific requirement does the advising registration guide give students? — run 3
+
+- Best distance: 0.6177 (refused by the gate)
+- Sources retrieved: admin_add_drop_deadline.txt, admin_graduation_requirements.txt, admin_pass_fail_option.txt, advising_registration.txt, course_engl_205_exams.txt
+
+```
+I don't have enough information about that.
+```
+
+### What policy or feature of Tamsin Court is described in the housing document? — run 1
+
+- Best distance: 0.4780 (passed the gate)
+- Sources retrieved: housing_fenwick_court.txt, housing_fenwick_court_noise.txt, housing_tamsin_court.txt, housing_tamsin_court_laundry.txt, housing_tamsin_court_noise.txt
+
+```
+Based on the provided documents, Tamsin Court features studio apartments with private kitchens and bathrooms, concrete floors between units for structural quietness, and in-unit washer-dryer laundry machines. 
+
+(Source: `housing_tamsin_court.txt`, `housing_tamsin_court_noise.txt`, and `housing_tamsin_court_laundry.txt`)
+```
+
+### What policy or feature of Tamsin Court is described in the housing document? — run 2
+
+- Best distance: 0.4780 (passed the gate)
+- Sources retrieved: housing_fenwick_court.txt, housing_fenwick_court_noise.txt, housing_tamsin_court.txt, housing_tamsin_court_laundry.txt, housing_tamsin_court_noise.txt
+
+```
+Tamsin Court features studio apartments with private kitchens and bathrooms, concrete floors between units for structural quietness, and in-unit washer-dryers. It is also the most expensive housing tier and the most independent option on campus with full kitchens. 
+
+(Source: housing_tamsin_court.txt)
+```
+
+### What policy or feature of Tamsin Court is described in the housing document? — run 3
+
+- Best distance: 0.4780 (passed the gate)
+- Sources retrieved: housing_fenwick_court.txt, housing_fenwick_court_noise.txt, housing_tamsin_court.txt, housing_tamsin_court_laundry.txt, housing_tamsin_court_noise.txt
+
+```
+Based on the provided documents, Tamsin Court features studio apartments with private kitchens and bathrooms, concrete floors between units for structural quietness, and in-unit washer-dryers. 
+
+Sources:
+- `housing_tamsin_court.txt`
+- `housing_tamsin_court_noise.txt`
+- `housing_tamsin_court_laundry.txt`
+```
+
 
 ## Verdicts
 
