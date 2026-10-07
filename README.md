@@ -115,14 +115,16 @@ without reading what came before or after?
 <!-- One complete question and answer, pasted as text, with the source line
      visible. Milestone 4. -->
 
-**Question:**
+**Question:** Is the housing lottery completely random?
 
-**Answer:**
+**Answer:** No, the housing lottery is not completely random. Rising sophomores receive a randomly drawn number, while juniors and seniors are ordered by accumulated credit hours first, with random selection used only for tie-breaks.
+
+**Source:** `admin_housing_lottery.txt`
 
 ```
 ```
 
-**My relevance cutoff:**
+**My relevance cutoff:** `0.6`
 
 <!-- The number you set in config.py, and how you got there.
 
@@ -136,7 +138,21 @@ without reading what came before or after?
 | Question | In corpus? | Best distance |
 |---|---|---|
 |  |  |  |
+| Is the housing lottery completely random? | Yes | 0.251 |
+| What determines priority in the housing lottery? | Yes | 0.361 |
+| What is the deadline or rule for obtaining a campus parking permit? | Yes | 0.521 |
+| What specific requirement does the advising registration guide give students? | Yes | 0.618 |
+| What policy or feature of Tamsin Court is described in the housing document? | Yes | 0.478 |
+| What is the capital of Mongolia? | No | 0.825 |
+| How do I change the oil in a diesel engine? | No | 0.934 |
+| Who won the 1994 World Cup? | No | 0.886 |
+| What is the recommended dosage of ibuprofen for a headache? | No | 0.844 |
+| How do I write a for loop in Rust? | No | 0.896 |
 
+The in-corpus questions were mostly below the `0.6` cutoff, while all five
+out-of-corpus questions were above it. The gate refused all five out-of-corpus
+questions and returned "I don't have enough information about that," so the
+cutoff cleanly separated the two groups for this test.
 ## How I Used AI
 
 <!-- Two specific moments. For each: what you asked for, what came back, and
